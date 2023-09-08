@@ -13,6 +13,34 @@
 // IMPORT ---------------------------------------------------------------
 
 const en = {
+  dashboard : {
+
+  },
+  auth: {
+
+  },
+  general: {
+    app: {
+      
+    }
+  },
+  management_question_questionCreatePage_title: 'Question: Create | Sarthak Admin',
+  management_question_questionCreatePage_create_a_new_question: 'Create a new question',
+  management_question_questionCreatePage_dashboard: 'Dashboard',
+  management_question_questionCreatePage_question: 'Question',
+  management_question_questionCreatePage_create: 'Create',
+  management: {
+    question: {
+      questionCreatePage: {
+        title: 'Question: Create | Sarthak Admin'
+      }
+    },
+    team: {},
+    user: {}
+  },
+  notifications: {
+
+  },
   about: 'About',
   account: 'Account',
   account_settings: 'Account Settings',

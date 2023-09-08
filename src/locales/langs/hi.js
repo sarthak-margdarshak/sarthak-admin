@@ -13,6 +13,26 @@
 // IMPORT ---------------------------------------------------------------
 
 const hi = {
+  dashboard : {
+
+  },
+  auth: {
+
+  },
+  general: {
+    app: {
+      
+    }
+  },
+  management_question_questionCreatePage_title: 'प्रश्न: बनाएं | सार्थक व्यवस्थापक',
+  management_question_questionCreatePage_dashboard : '',
+  management: {
+    team: {},
+    user: {}
+  },
+  notifications: {
+
+  },
   about: 'के बारे में',
   account: 'खाता',
   account_settings: 'अकाउंट सेटिंग',

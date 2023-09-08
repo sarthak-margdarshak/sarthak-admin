@@ -55,7 +55,7 @@ export default function GeneralAppPage() {
           <Grid item xs={12} md={8}>
             <AppWelcome
               title={`Welcome back! \n ${user?.name}`}
-              description="If you are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything."
+              description="How many question you have typed? Contribute to Sarthak Institute by typing question here."
               img={
                 <SeoIllustration
                   sx={{
@@ -65,7 +65,7 @@ export default function GeneralAppPage() {
                   }}
                 />
               }
-              action={<Button variant="contained">Go Now</Button>}
+              action={<Button onClick={() => window.open(window.location.origin+'/dashboard/question/new', '_self')} variant="contained">Try it !</Button>}
             />
           </Grid>
 

@@ -8,16 +8,18 @@ import { useSettingsContext } from '../../../../components/settings';
 import CustomBreadcrumbs from '../../../../components/custom-breadcrumbs';
 // sections
 import { QuestionNewCreateForm } from '../../../../sections/@dashboard/question/create';
+import { useLocales } from '../../../../locales';
 
 // ----------------------------------------------------------------------
 
 export default function QuestionCreatePage() {
   const { themeStretch } = useSettingsContext();
+  const { translate } = useLocales();
 
   return (
     <>
       <Helmet>
-        <title> Question: Create | Sarthak Admin</title>
+        <title>{translate('management_question_questionCreatePage_title')}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
