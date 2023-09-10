@@ -9,30 +9,32 @@ import CustomBreadcrumbs from '../../../../components/custom-breadcrumbs';
 // sections
 import QuestionDetails from '../../../../sections/@dashboard/question/edit/QuestionDetails';
 import Iconify from '../../../../components/iconify/Iconify';
+import { useLocales } from '../../../../locales';
 
 // ----------------------------------------------------------------------
 
 export default function QuestionDetailsPage() {
   const { themeStretch } = useSettingsContext();
+  const { translate } = useLocales();
 
   const questionId = window.location.pathname.split('/')[3];
 
   return (
     <>
       <Helmet>
-        <title>Question: View | Sarthak Admin</title>
+        <title>{translate('pages_dashboard_management_question_questionDetailsPage_title')}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="View Question"
+          heading={translate('pages_dashboard_management_question_questionDetailsPage_view')}
           links={[
             {
-              name: 'Dashboard',
+              name: translate('pages_dashboard_management_question_questionDetailsPage__dashboard'),
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Question',
+              name: translate('pages_dashboard_management_question_questionDetailsPage_question'),
               href: PATH_DASHBOARD.question.list,
             },
             {
@@ -41,11 +43,11 @@ export default function QuestionDetailsPage() {
           ]}
           action={
             <Button
-              onClick={() => window.open(PATH_DASHBOARD.question.new,'_self')}
+              onClick={() => window.open(PATH_DASHBOARD.question.new, '_self')}
               variant="contained"
               startIcon={<Iconify icon="eva:plus-fill" />}
             >
-              New Question
+              {translate('pages_dashboard_management_question_questionDetailsPage_new')}
             </Button>
           }
         />

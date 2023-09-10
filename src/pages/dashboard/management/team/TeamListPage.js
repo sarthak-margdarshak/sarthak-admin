@@ -81,13 +81,13 @@ export default function TeamListPage() {
   const TABS = [
     {
       value: 'your_team',
-      label: translate('your_team'),
+      label: translate('pages_dashboard_management_team_teamListPage_yourTeam'),
       icon: <Iconify icon="fluent-mdl2:team-favorite" />,
       component: <TeamListCard teams={myTeam} />,
     },
     {
       value: 'all_team',
-      label: translate('all_team'),
+      label: translate('pages_dashboard_management_team_teamListPage_allTeam'),
       icon: <Iconify icon="ps:people-team" />,
       component: <TeamListCard teams={allTeam} />,
     },
@@ -102,15 +102,15 @@ export default function TeamListPage() {
   return (
     <>
       <Helmet>
-        <title>Team: List | Sarthak Admin</title>
+        <title>{translate('pages_dashboard_management_team_teamListPage_title')}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Teams"
+          heading={translate('pages_dashboard_management_team_teamListPage_teams')}
           links={[
-            { name: translate('dashboard'), href: PATH_DASHBOARD.root },
-            { name: 'Teams' },
+            { name: translate('pages_dashboard_management_team_teamListPage_dashboard'), href: PATH_DASHBOARD.root },
+            { name: translate('pages_dashboard_management_team_teamListPage_teams') },
           ]}
           action={
             createTeam &&
@@ -120,7 +120,7 @@ export default function TeamListPage() {
               variant="contained"
               startIcon={<Iconify icon="eva:plus-fill" />}
             >
-              Create A Team
+              {translate('pages_dashboard_management_team_teamListPage_createATeam')}
             </Button>
           }
         />

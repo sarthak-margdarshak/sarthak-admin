@@ -9,28 +9,30 @@ import CustomBreadcrumbs from '../../../../components/custom-breadcrumbs';
 import Iconify from '../../../../components/iconify/Iconify';
 // Sections
 import QuestionListComponent from '../../../../sections/@dashboard/question/view/QuestionListComponent';
+import { useLocales } from '../../../../locales';
 
 // ----------------------------------------------------------------------
 
 export default function QuestionEditPage() {
   const { themeStretch } = useSettingsContext();
+  const { translate } = useLocales();
 
   return (
     <>
       <Helmet>
-        <title>Question: List | Sarthak Admin</title>
+        <title>{translate('pages_dashboard_management_question_questionListPage_title')}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Question"
+          heading={translate('pages_dashboard_management_question_questionListPage_question')}
           links={[
             {
-              name: 'Dashboard',
+              name: translate('pages_dashboard_management_question_questionListPage_dashboard'),
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Questions',
+              name: translate('pages_dashboard_management_question_questionListPage_questions'),
             },
           ]}
           action={
@@ -39,7 +41,7 @@ export default function QuestionEditPage() {
               variant="contained"
               startIcon={<Iconify icon="eva:plus-fill" />}
             >
-              New Question
+              {translate('pages_dashboard_management_question_questionListPage_new')}
             </Button>
           }
         />

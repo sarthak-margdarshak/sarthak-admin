@@ -8,30 +8,32 @@ import { useSettingsContext } from '../../../../components/settings';
 import CustomBreadcrumbs from '../../../../components/custom-breadcrumbs';
 // sections
 import { QuestionNewCreateForm } from '../../../../sections/@dashboard/question/create';
+import { useLocales } from '../../../../locales';
 
 // ----------------------------------------------------------------------
 
 export default function QuestionEditPage() {
   const { themeStretch } = useSettingsContext();
+  const { translate } = useLocales();
 
   const questionId = window.location.pathname.split('/')[3];
 
   return (
     <>
       <Helmet>
-        <title> Question: Edit | Sarthak Admin</title>
+        <title>{translate('pages_dashboard_management_question_questionEditPage_title')}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Edit Question"
+          heading={translate('pages_dashboard_management_question_questionEditPage_edit_question')}
           links={[
             {
-              name: 'Dashboard',
+              name: translate('pages_dashboard_management_question_questionEditPage_dashboard'),
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Question',
+              name: translate('pages_dashboard_management_question_questionEditPage_question'),
               href: PATH_DASHBOARD.question.list,
             },
             {
@@ -39,7 +41,7 @@ export default function QuestionEditPage() {
               href: PATH_DASHBOARD.question.view(questionId),
             },
             {
-              name: 'Edit',
+              name: translate('pages_dashboard_management_question_questionEditPage_edit'),
             },
           ]}
         />

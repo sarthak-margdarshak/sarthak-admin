@@ -53,18 +53,7 @@ import {
   User,
 } from '../../../../auth/AppwriteContext';
 import { useAuthContext } from '../../../../auth/useAuthContext';
-
-// ----------------------------------------------------------------------
-
-const TABLE_HEAD = [
-  { id: 'sn', },
-  { id: 'name', label: 'Name', align: 'left' },
-  { id: 'designation', label: 'Designation', align: 'left' },
-  { id: 'role', label: 'Role', align: 'left' },
-  { id: 'invitationAccepted', label: 'Invite Accepted', align: 'center' },
-  { id: 'status', label: 'Status', align: 'left' },
-  { id: '' },
-];
+import { useLocales } from '../../../../locales';
 
 // ----------------------------------------------------------------------
 
@@ -77,6 +66,17 @@ export default function TeamDetailsPage() {
   const {
     user,
   } = useAuthContext();
+  const { translate } = useLocales();
+
+  const TABLE_HEAD = [
+    { id: 'sn', },
+    { id: 'name', label: translate('pages_dashboard_management_team_teamDetailsPage_Name'), align: 'left' },
+    { id: 'designation', label: translate('pages_dashboard_management_team_teamDetailsPage_designation'), align: 'left' },
+    { id: 'role', label: translate('pages_dashboard_management_team_teamDetailsPage_role'), align: 'left' },
+    { id: 'invitationAccepted', label: translate('pages_dashboard_management_team_teamDetailsPage_invitationAccepted'), align: 'center' },
+    { id: 'status', label: translate('pages_dashboard_management_team_teamDetailsPage_status'), align: 'left' },
+    { id: '' },
+  ];
 
   const [team, setTeam] = useState(null);
   const [cover, setCover] = useState(null);
@@ -170,15 +170,15 @@ export default function TeamDetailsPage() {
   return (
     <>
       <Helmet>
-        <title>{'Team: ' + team?.name + ' | Sarthak Admin'}</title>
+        <title>{translate('pages_dashboard_management_team_teamDetailsPage_team_title') + team?.name + translate('pages_dashboard_management_team_teamDetailsPage_sarthak_title')}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading={team?.name + " Members"}
+          heading={team?.name + translate('pages_dashboard_management_team_teamDetailsPage_members')}
           links={[
-            { name: 'Dashboard', href: PATH_DASHBOARD.root },
-            { name: 'Team', href: PATH_DASHBOARD.team.list },
+            { name: translate('pages_dashboard_management_team_teamDetailsPage_dashboard'), href: PATH_DASHBOARD.root },
+            { name: translate('pages_dashboard_management_team_teamDetailsPage_team'), href: PATH_DASHBOARD.team.list },
             { name: team?.name },
           ]}
           action={user?.$id === team?.teamOwner &&
@@ -189,7 +189,7 @@ export default function TeamDetailsPage() {
                 variant="contained"
                 startIcon={<Iconify icon="eva:plus-fill" />}
               >
-                New
+                {translate('pages_dashboard_management_team_teamDetailsPage_new')}
               </Button>
               <Button
                 component={RouterLink}
@@ -198,7 +198,7 @@ export default function TeamDetailsPage() {
                 variant="outlined"
                 startIcon={<Iconify icon="mingcute:invite-line" />}
               >
-                Invite
+                {translate('pages_dashboard_management_team_teamDetailsPage_invite')}
               </Button>
             </>
           }

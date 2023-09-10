@@ -9,6 +9,7 @@ import CustomBreadcrumbs from '../../../../components/custom-breadcrumbs';
 // sections
 import { QuestionNewCreateForm } from '../../../../sections/@dashboard/question/create';
 import { useLocales } from '../../../../locales';
+import {string as string} from '../../../../resource/string'
 
 // ----------------------------------------------------------------------
 
@@ -19,23 +20,23 @@ export default function QuestionCreatePage() {
   return (
     <>
       <Helmet>
-        <title>{translate('management_question_questionCreatePage_title')}</title>
+        <title>{translate(string.pages.dashboard.management.question.createPage.title)}</title>
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         <CustomBreadcrumbs
-          heading="Create a new question"
+          heading={translate(string.pages.dashboard.management.question.createPage.createANewQuestion)}
           links={[
             {
-              name: 'Dashboard',
+              name: translate(string.pages.dashboard.management.question.createPage.dashboard),
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Question',
+              name: translate(string.pages.dashboard.management.question.createPage.question),
               href: PATH_DASHBOARD.question.list,
             },
             {
-              name: 'Create',
+              name: translate(string.pages.dashboard.management.question.createPage.create),
             },
           ]}
         />

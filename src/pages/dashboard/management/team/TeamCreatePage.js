@@ -35,50 +35,49 @@ export default function TeamCreatePage() {
   }
 
   const { themeStretch } = useSettingsContext();
-
   const { translate } = useLocales();
 
   return (
     <>
       <Helmet>
       {teamId ?
-        <title>Team: Edit | Sarthak Admin</title>:
-        <title>Team: Create | Sarthak Admin</title>
+        <title>{translate('pages_dashboard_management_team_teamCreatePage_title_edit')}</title>:
+        <title>{translate('pages_dashboard_management_team_teamCreatePage_title_create')}</title>
       }
       </Helmet>
 
       <Container maxWidth={themeStretch ? false : 'lg'}>
         {teamId ?
         <CustomBreadcrumbs
-        heading="Edit Team"
+        heading={translate('pages_dashboard_management_team_teamCreatePage_title_edit_team')}
         links={[
           {
-            name: translate('dashboard'),
+            name: translate('pages_dashboard_management_team_teamCreatePage_dashboard'),
             href: PATH_DASHBOARD.root,
           },
           {
-            name: 'Team',
+            name: translate('pages_dashboard_management_team_teamCreatePage_team'),
             href: PATH_DASHBOARD.team.list,
           },
           {
             name: teamId,
             href: PATH_DASHBOARD.team.view(teamId),
           },
-          { name: 'edit'}
+          { name: translate('pages_dashboard_management_team_teamCreatePage_edit')}
         ]}
       />:
         <CustomBreadcrumbs
-          heading="Create a new Team"
+          heading={translate('pages_dashboard_management_team_teamCreatePage_createANewTeam')}
           links={[
             {
-              name: translate('dashboard'),
+              name: translate('pages_dashboard_management_team_teamCreatePage_dashboard'),
               href: PATH_DASHBOARD.root,
             },
             {
-              name: 'Team',
+              name: translate('pages_dashboard_management_team_teamCreatePage_team'),
               href: PATH_DASHBOARD.team.list,
             },
-            { name: 'New Team' },
+            { name: translate('pages_dashboard_management_team_teamCreatePage_new_team') },
           ]}
         />}
         <TeamNewForm teamId={teamId} />

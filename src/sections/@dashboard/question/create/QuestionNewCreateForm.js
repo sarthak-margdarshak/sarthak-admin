@@ -1046,9 +1046,9 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
             <Card>
               <CardHeader title={activeStep === 7 ? 'Preview' : STEPS[activeStep]} />
 
-              <CardContent sx={{ mt: 2 }}>
+              <CardContent>
                 <MotionContainer component={m.div} variants={getVariant(motion)}>
-                  <Grid container spacing={3} key={motionKey} sx={{ p: 1, display: activeStep === 0 ? 'block' : 'none' }}>
+                  <Grid container spacing={3} key={motionKey} sx={{ display: activeStep === 0 ? 'block' : 'none' }}>
 
                     <Grid item xs={12} md={12}>
                       <TextField
@@ -1208,12 +1208,11 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 1 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
                     <Grid item xs={12} md={12}>
                       <Paper
                         sx={{
                           p: 1,
-                          my: 1,
                           minHeight: 100,
                           bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                         }}
@@ -1243,12 +1242,11 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 2 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
                     <Grid item xs={12} md={12}>
                       <Paper
                         sx={{
                           p: 1,
-                          my: 1,
                           minHeight: 100,
                           bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                         }}
@@ -1278,13 +1276,12 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 3 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
 
                     <Grid item xs={12} md={12}>
                       <Paper
                         sx={{
                           p: 1,
-                          my: 1,
                           minHeight: 100,
                           bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                         }}
@@ -1315,13 +1312,12 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 4 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
 
                     <Grid item xs={12} md={12}>
                       <Paper
                         sx={{
                           p: 1,
-                          my: 1,
                           minHeight: 100,
                           bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                         }}
@@ -1352,12 +1348,11 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 5 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
                     <Grid item xs={12} md={12}>
                       <Paper
                         sx={{
                           p: 1,
-                          my: 1,
                           minHeight: 100,
                           bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                         }}
@@ -1387,7 +1382,7 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 6 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
                     <Grid item xs={12} md={12}>
                       <Stack spacing={1}>
                         <Typography variant="subtitle2" sx={{ color: 'text.secondary' }}>
@@ -1396,7 +1391,6 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                         <Paper
                           sx={{
                             p: 1,
-                            my: 1,
                             minHeight: 50,
                             bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                           }}
@@ -1417,7 +1411,6 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                         <Paper
                           sx={{
                             p: 1,
-                            my: 1,
                             minHeight: 100,
                             bgcolor: (theme) => alpha(theme.palette.grey[500], 0.12),
                           }}
@@ -1448,7 +1441,7 @@ export default function QuestionNewCreateForm({ inComingQuestionId }) {
                 </MotionContainer>
 
                 <MotionContainer component={m.div} variants={getVariant(motion)} sx={{ display: activeStep === 7 ? 'block' : 'none' }}>
-                  <Grid sx={{ p: 1 }} container spacing={3} key={motionKey}>
+                  <Grid container spacing={3} key={motionKey}>
                     <Grid item xs={12} md={12}>
                       <Stack direction='row'>
                         <Typography sx={{ mr: 2 }} variant="h5">Q.</Typography>
